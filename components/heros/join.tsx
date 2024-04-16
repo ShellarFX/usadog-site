@@ -29,23 +29,19 @@ export const Join = () => {
             </RotatingDiv>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.1}>
-            <div className="text-foreground2 text-3xl">
-              Don't miss your chance to be part of something truly special. Whether you're a
-              crypto enthusiast, a dog lover, or just someone who believes in honoring our
-              heroes, there's a place for you in the USADOG pack
-            </div>
-          </RevealOnScroll>
+          <div className="text-foreground2 text-3xl">
+            Don't miss your chance to be part of something truly special. Whether you're a
+            crypto enthusiast, a dog lover, or just someone who believes in honoring our
+            heroes, there's a place for you in the USADOG pack
+          </div>
 
           <div className="flex w-full justify-center">
-            <RevealOnScroll>
-              <ScalingDiv>
-                <Button as={Link}
-                        isExternal
-                        href="https://t.me/usadogofficial"
-                        className="!w-64 !h-24 text-3xl rounded-3xl bg-[#3A57C9] hover:scale-110">JOIN US!</Button>
-              </ScalingDiv>
-            </RevealOnScroll>
+            <ScalingDiv>
+              <Button as={Link}
+                      isExternal
+                      href="https://t.me/usadogofficial"
+                      className="!w-64 !h-24 text-3xl rounded-3xl bg-[#3A57C9] hover:scale-110">JOIN US!</Button>
+            </ScalingDiv>
           </div>
         </div>
       </div>

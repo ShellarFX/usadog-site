@@ -20,7 +20,7 @@ export const Welcome = () => {
 
         <div className="flex md:flex-row flex-col w-full gap-12 md:gap-32 max-w-7xl md:px-0 items-center text-center px-6 z-10">
           <div className="flex flex-col items-center z-10 shrink-0">
-            <RevealOnScroll delay={0.1}>
+            <RevealOnScroll>
               <FloatingDiv>
                 <Image width={0}
                        height={0}
@@ -31,21 +31,19 @@ export const Welcome = () => {
               </FloatingDiv>
             </RevealOnScroll>
 
-            <RevealOnScroll delay={0.2}>
-              <RotatingDiv>
+            <RevealOnScroll>
               <Image width={0}
                      height={0}
                      sizes="100vw"
                      src="/dogs.png"
                      alt="welcome"
                      className="w-[360px] md:w-[460px] h-auto drop-shadow-md pl-14" />
-              </RotatingDiv>
             </RevealOnScroll>
           </div>
 
 
           <div className="flex flex-col gap-2 z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-            <RevealOnScroll delay={0.3}>
+            <RevealOnScroll delay={0.2}>
               <div className="text-5xl md:whitespace-nowrap">
                 Join the pack of Crypto Heroes!
               </div>

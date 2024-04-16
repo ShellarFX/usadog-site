@@ -10,7 +10,7 @@ interface FloatingDivProps {
 export const FloatingDiv = ({ children, delay = 0 }: FloatingDivProps) => {
   return (
       <motion.div
-          animate={{ y: [-15, 15] }}
+          animate={{ y: [-30, 0] }}
           transition={{
             delay: delay,
             repeat: Infinity,
