@@ -52,7 +52,7 @@ export const Roadmap = () => {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.2}>
-              <RoadmapFrame title="Phase 2" items={[
+              <RoadmapFrame title="Phase 3" items={[
                 'Transition into the next phase of marketing.',
                 'launch nft.',
                 'donation campaing.',
