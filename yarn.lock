@@ -290,6 +290,16 @@
     "@nextui-org/shared-utils" "2.0.4"
     "@nextui-org/system-rsc" "2.0.11"
 
+"@nextui-org/divider@^2.0.26":
+  version "2.0.26"
+  resolved "https://registry.yarnpkg.com/@nextui-org/divider/-/divider-2.0.26.tgz#d5e24150ef915183a68f47741deeb1c99c1da5b5"
+  integrity sha512-xjS2MDRC5Str3nGAwToGkO7Q5bLAAJaEBrJ5fKR2ptp9FM/S5FWGGwJ+Rl48lXQfj8n5gV2i6E4GpdBjAIPvDA==
+  dependencies:
+    "@nextui-org/react-rsc-utils" "2.0.11"
+    "@nextui-org/shared-utils" "2.0.5"
+    "@nextui-org/system-rsc" "2.1.0"
+    "@react-types/shared" "^3.22.1"
+
 "@nextui-org/framer-transitions@2.0.15":
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/@nextui-org/framer-transitions/-/framer-transitions-2.0.15.tgz#da53e1923e8091d0a9d91e8791cf661d8e8b3b01"
@@ -362,6 +372,11 @@
   resolved "https://registry.yarnpkg.com/@nextui-org/react-rsc-utils/-/react-rsc-utils-2.0.10.tgz#2a20e4b72e6f9dc57efe235a66f1b4a017d94cbb"
   integrity sha512-LNePDEThUF9PAbJW4T8k7EgSfqwlvGku5fIqJ1IA9+OpVy5LqhrUQehjvgXe63N1RupC7Pt+XvaaxkGu9U2FiQ==
 
+"@nextui-org/react-rsc-utils@2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@nextui-org/react-rsc-utils/-/react-rsc-utils-2.0.11.tgz#61994bf8a55d465f9f1653675387b0c17fc92d80"
+  integrity sha512-clA0fpAB+kSfbDfx3V7qSWUPczTql9pBw0iWOKKwqY4RLFjoW9EuiwQiVLw0taJwhTlNH+L9M34TZZG9OQSjDw==
+
 "@nextui-org/react-utils@2.0.10":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@nextui-org/react-utils/-/react-utils-2.0.10.tgz#30cd3d03fbb911d496ae15b9d27b0f5ab9450876"
@@ -387,6 +402,11 @@
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@nextui-org/shared-utils/-/shared-utils-2.0.4.tgz#a5fbd5227ad3a2ab637582e77ad33c73d99f5f32"
   integrity sha512-Ms7A6UCvo/SZt/9Nmb7cZwHe9fZFw+EPsieTnC1vtpvDNCasxrTB0hj9VWFoYfWOaCzzqxl1AL9maIz/gMvckQ==
+
+"@nextui-org/shared-utils@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@nextui-org/shared-utils/-/shared-utils-2.0.5.tgz#f04072240f35b0a5748fe38b4ec1c285231d6074"
+  integrity sha512-aFc/CUL8RVfBh0IotIpxkpKjyUPc/zJaMJd5pRCQA1kIpKLdSrlh3//MLYMaP/fo/NQtE3DPeXqfKhHRr1fkEw==
 
 "@nextui-org/snippet@2.0.30":
   version "2.0.30"
@@ -431,6 +451,13 @@
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@nextui-org/system-rsc/-/system-rsc-2.0.11.tgz#7f81b925c988b34f85f587af27e42fdbe5c463cc"
   integrity sha512-1QqZ+GM7Ii0rsfSHXS6BBjzKOoLIWwb72nm4h4WgjlMXbRKLZcCQasRHVe5HMSBMvN0JUo7qyGExchfDFl/Ubw==
+  dependencies:
+    clsx "^1.2.1"
+
+"@nextui-org/system-rsc@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nextui-org/system-rsc/-/system-rsc-2.1.0.tgz#dbdf6675ee655f8e9c15e609f78d2000cea10d8b"
+  integrity sha512-8OBsJlUKsHy/D5MT5sciVARA1i09it9sJsGhm7WR2HORWnH/4W4a8FyD3qcQXJSqMlJ62LO0t0cV5bxfAMyryg==
   dependencies:
     clsx "^1.2.1"
 
