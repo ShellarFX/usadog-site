@@ -38,7 +38,7 @@ export default function RootLayout({
       <head>
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="https://terminal.jup.ag/main-v2.js" />
-        <title>$USADOG</title>
+        <title>$USADOG - Pack of Crypto Heroes</title>
       </head>
       <body
           className={clsx(
