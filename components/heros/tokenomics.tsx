@@ -38,7 +38,7 @@ export const Tokenomics = () => {
 
               <RevealOnScroll delay={0.1}>
                 <div className="flex flex-col gap-2 text-3xl md:text-5xl">
-                  <div>100$ BURNT</div>
+                  <div>100% BURNT</div>
                   <div>0%</div>
                   <div>$USADOG</div>
                 </div>
