@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { WhyFrame } from '@/components/why-frame';
 import { useEffect } from 'react';
+import { RevealOnScroll } from '@/components/reveal-on-scroll';
+import { RotatingDiv } from '@/components/rotating-div';
 
 export const HowToGetStarted = () => {
   useEffect(() => {
@@ -22,7 +24,7 @@ export const HowToGetStarted = () => {
   }, []);
 
   return (
-      <div className="relative py-12 w-full items-center flex justify-center">
+      <div id="get-started" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
             sizes="100vw"
             fill
@@ -30,45 +32,54 @@ export const HowToGetStarted = () => {
             src="/background2.png"
             quality={100}
             alt="background"
+            className="pointer-events-none"
         />
 
-        <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6">
-          <div className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-            How to get started?
-          </div>
+        <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6 z-10">
+          <RevealOnScroll>
+            <RotatingDiv>
+              <div className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+                How to get started?
+              </div>
+            </RotatingDiv>
+          </RevealOnScroll>
 
           <div className="flex md:flex-row flex-col gap-8 md:gap-24 w-full z-10 justify-center items-center">
-            <div className="bg-zinc-800 px-2 pt-2.5 rounded-xl shrink-0 flex-grow-0">
-              <div id="integrated-terminal" />
-            </div>
+            <RevealOnScroll delay={0.1}>
+              <div className="bg-zinc-800 px-2 pt-2.5 rounded-xl shrink-0 flex-grow-0">
+                <div id="integrated-terminal" />
+              </div>
+            </RevealOnScroll>
 
-            <div className="relative flex h-full">
-              <Image width={0}
-                     height={0}
-                     sizes="100vw"
-                     src='/frame90.png'
-                     alt="welcome"
-                     className="h-[240px] md:h-[460px] w-auto hidden md:block" />
+            <RevealOnScroll delay={0.2}>
+              <div className="relative flex h-full">
+                <Image width={0}
+                       height={0}
+                       sizes="100vw"
+                       src="/frame90.png"
+                       alt="welcome"
+                       className="h-[240px] md:h-[460px] w-auto hidden md:block" />
 
 
-              <div className="static md:absolute flex flex-col p-0 md:text-left text-center md:p-12 items-center justify-center h-full gap-2 text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-                <div>
-                  1. Buy USADOG: Purchase USADOG tokens
-                  and become a proud member of our
-                  community.
-                </div>
-                <div>
-                  2. Spread the Word: Share the USADOG
-                  mission with friends, family, and
-                  fellow crypto enthusiasts.
-                </div>
-                <div>
-                  3. Stay Connected: Follow us on social
-                  media for the latest updates,
-                  giveaways, and community events.
+                <div className="static md:absolute flex flex-col p-0 md:text-left text-center md:p-12 items-center justify-center h-full gap-2 text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+                  <div>
+                    1. Buy USADOG: Purchase USADOG tokens
+                    and become a proud member of our
+                    community.
+                  </div>
+                  <div>
+                    2. Spread the Word: Share the USADOG
+                    mission with friends, family, and
+                    fellow crypto enthusiasts.
+                  </div>
+                  <div>
+                    3. Stay Connected: Follow us on social
+                    media for the latest updates,
+                    giveaways, and community events.
+                  </div>
                 </div>
               </div>
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </div>
