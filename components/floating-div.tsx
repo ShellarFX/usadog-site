@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface FloatingDivProps {
-  children: ReactNode
-  delay?: number
+  children: ReactNode;
+  delay?: number;
 }
-
 
 export const FloatingDiv = ({ children, delay = 0 }: FloatingDivProps) => {
   return (
@@ -14,12 +13,12 @@ export const FloatingDiv = ({ children, delay = 0 }: FloatingDivProps) => {
           transition={{
             delay: delay,
             repeat: Infinity,
-            repeatType: "reverse",
+            repeatType: 'reverse',
             duration: 2.5,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
-        >
+      >
         {children}
       </motion.div>
   );
-}
+};

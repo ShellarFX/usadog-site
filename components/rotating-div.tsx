@@ -1,13 +1,12 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface RotatingDivProps {
-  children: ReactNode
-  delay?: number
-  rotation?: number
-  duration?: number
+  children: ReactNode;
+  delay?: number;
+  rotation?: number;
+  duration?: number;
 }
-
 
 export const RotatingDiv = ({ children, delay = 0, rotation, duration }: RotatingDivProps) => {
   return (
@@ -16,12 +15,12 @@ export const RotatingDiv = ({ children, delay = 0, rotation, duration }: Rotatin
           transition={{
             delay: delay,
             repeat: Infinity,
-            repeatType: "reverse",
+            repeatType: 'reverse',
             duration: duration || 2.5,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
       >
         {children}
       </motion.div>
   );
-}
+};

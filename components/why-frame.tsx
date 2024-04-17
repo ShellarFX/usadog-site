@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 interface WhyFrameProps {
-  image: string
-  title: string
-  description: string
+  image: string;
+  title: string;
+  description: string;
 }
 
-export const WhyFrame = ({image, title, description}: WhyFrameProps) => {
+export const WhyFrame = ({ image, title, description }: WhyFrameProps) => {
   return (
       <div className="relative w-full flex h-full">
         <Image width={0}
@@ -26,15 +26,15 @@ export const WhyFrame = ({image, title, description}: WhyFrameProps) => {
                  className="w-[140px] md:w-[200px] h-auto" />
 
           <div className="flex flex-col gap-4">
-          <div className="text-4xl">
-            {title}
-          </div>
+            <div className="text-4xl">
+              {title}
+            </div>
 
-          <div className="text-2xl">
-            {description}
-          </div>
+            <div className="text-2xl">
+              {description}
+            </div>
           </div>
         </div>
       </div>
-  )
-}
+  );
+};

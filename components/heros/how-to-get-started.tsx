@@ -1,10 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { WhyFrame } from '@/components/why-frame';
 import { useEffect } from 'react';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
+import { Button } from '@nextui-org/button';
+import { Link } from '@nextui-org/link';
 
 export const HowToGetStarted = () => {
   useEffect(() => {
@@ -45,11 +46,29 @@ export const HowToGetStarted = () => {
           </RevealOnScroll>
 
           <div className="flex md:flex-row flex-col gap-8 md:gap-24 w-full z-10 justify-center items-center">
-            <RevealOnScroll delay={0.1}>
-              <div className="bg-zinc-800 px-2 pt-2.5 rounded-xl shrink-0 flex-grow-0">
-                <div id="integrated-terminal" />
+            <div className="flex flex-col gap-4">
+              <RevealOnScroll delay={0.1}>
+                <div className="bg-zinc-800 px-2 pt-2.5 rounded-xl shrink-0 flex-grow-0">
+                  <div id="integrated-terminal" />
+                </div>
+              </RevealOnScroll>
+
+              <RevealOnScroll delay={0.2}>
+              <div className="flex w-full gap-4">
+                <Button as={Link}
+                        href="https://jup.ag/swap/SOL-GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP"
+                        isExternal
+                        fullWidth
+                        className="!h-12 text-lg bg-foreground2">Buy on jup.ag</Button>
+
+                <Button as={Link}
+                        href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP&fixed=in"
+                        isExternal
+                        fullWidth
+                        className="!h-12 text-lg bg-foreground2">Buy on raydium.io</Button>
               </div>
-            </RevealOnScroll>
+              </RevealOnScroll>
+            </div>
 
             <RevealOnScroll delay={0.2}>
               <div className="relative flex h-full">

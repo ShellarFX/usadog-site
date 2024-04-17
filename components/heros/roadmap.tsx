@@ -30,7 +30,6 @@ export const Roadmap = () => {
           <div className="flex md:flex-row flex-col gap-16 w-full justify-center">
             <RevealOnScroll>
               <RoadmapFrame title="Phase 1" items={[
-                'Idea creation.',
                 'Community building.',
                 'Launching social media.',
                 'Launching $USADOG website.',
@@ -42,24 +41,24 @@ export const Roadmap = () => {
             <RevealOnScroll delay={0.1}>
               <RoadmapFrame title="Phase 2" items={[
                 'Idea creation.',
-                'more partnerships with strategic influencers.',
+                'More partnerships with strategic influencers.',
                 'Creation of content for social media.',
-                '$usadog trending.',
-                'update social media on dexscreener and dexstool.',
-                'listing on cmc & cg.',
-                'listing on cexS.',
+                '$USADOG trending.',
+                'Update social media on dexscreener and dexstool.',
+                'Listing on cmc & cg.',
+                'Listing on cexS.',
               ]} />
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.2}>
               <RoadmapFrame title="Phase 3" items={[
                 'Transition into the next phase of marketing.',
-                'launch nft.',
-                'donation campaing.',
-                'more partnerships with influencers.',
-                'more cexs listing.',
-                'partnerships with other projects.',
-                'tier 1 cex listings.',
+                'Launch nft.',
+                'Donation campaing.',
+                'More partnerships with influencers.',
+                'More CEXs listing.',
+                'Partnerships with other projects.',
+                'Tier 1 CEX listings.',
               ]} />
             </RevealOnScroll>
           </div>

@@ -41,4 +41,14 @@ export const siteConfig = {
 			href: "/",
 		},
 	],
+	socials: [
+		{
+			label: "Twitter",
+			href: "https://twitter.com/usadog_official"
+		},
+		{
+			label: "Telegram",
+			href: "https://t.me/@usadogofficial"
+		}
+	]
 };

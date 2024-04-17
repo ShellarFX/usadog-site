@@ -10,9 +10,7 @@ import {
   NavbarMenuItem,
 } from '@nextui-org/navbar';
 import { Button } from '@nextui-org/button';
-import { Kbd } from '@nextui-org/kbd';
 import { Link } from '@nextui-org/link';
-import { Input } from '@nextui-org/input';
 
 import { link as linkStyles } from '@nextui-org/theme';
 
@@ -20,6 +18,9 @@ import { siteConfig } from '@/config/site';
 import NextLink from 'next/link';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
+import { ChevronDownIcon } from '@nextui-org/shared-icons';
+import { Divider } from '@nextui-org/divider';
 
 export const Navbar = () => {
   return (
@@ -38,7 +39,7 @@ export const Navbar = () => {
                   <div
                       className={clsx(
                           linkStyles({ color: 'foreground' }),
-                          'data-[active=true]:text-primary data-[active=true]:font-medium !text-2xl mt-2 cursor-pointer',
+                          'data-[active=true]:text-primary data-[active=true]:font-medium !text-xl pt-2 cursor-pointer',
                       )}
 
                       color="foreground"
@@ -48,6 +49,31 @@ export const Navbar = () => {
                   </div>
                 </NavbarItem>
             ))}
+
+              <Dropdown>
+            <NavbarItem>
+                <DropdownTrigger>
+                  <Button disableRipple
+                          className="p-0 bg-transparent data-[hover=true]:bg-transparent !text-xl pt-1 text-foreground"
+                          endContent={<ChevronDownIcon className="pb-1" />}
+                          radius="sm"
+                          variant="light">Socials</Button>
+                </DropdownTrigger>
+            </NavbarItem>
+                <DropdownMenu className="w-[340px]"
+                              itemClasses={{
+                                base: "gap-4",
+                                title: "text-foreground text-lg"
+                              }}
+                >
+                  {siteConfig.socials.map((social, index) => (
+                      // @ts-ignore
+                      <DropdownItem key={index} as={Link} isExternal href={social.href}>
+                          {social.label}
+                      </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
           </ul>
         </NavbarContent>
 
@@ -84,6 +110,14 @@ export const Navbar = () => {
                   >
                     {item.label}
                   </div>
+                </NavbarMenuItem>
+            ))}
+            <Divider />
+            {siteConfig.socials.map((social, index) => (
+                <NavbarMenuItem key={`${social.label}-${index}`}>
+                  <Link href={social.href} isExternal className="text-foreground">
+                    {social.label}
+                  </Link>
                 </NavbarMenuItem>
             ))}
           </div>

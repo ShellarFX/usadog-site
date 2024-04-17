@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { FloatingDiv } from '@/components/floating-div';
-import { RotatingDiv } from '@/components/rotating-div';
 
 export const Welcome = () => {
   return (

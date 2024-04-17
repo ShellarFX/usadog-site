@@ -1,32 +1,29 @@
 import { motion, Variants } from 'framer-motion';
 import { ReactNode } from 'react';
 
-
 interface RevealOnScrollProps {
   children: ReactNode,
   duration?: number
   delay?: number
 }
 
-
-export const RevealOnScroll = ({children, duration, delay}: RevealOnScrollProps) => {
+export const RevealOnScroll = ({ children, duration, delay }: RevealOnScrollProps) => {
   const cardVariants: Variants = {
     offscreen: {
       opacity: 0,
-      y: -100
+      y: -100,
     },
     onscreen: {
       y: 0,
       opacity: 1,
       transition: {
         delay,
-        type: "spring",
+        type: 'spring',
         bounce: 0.6,
-        duration: duration || 1.5
-      }
-    }
+        duration: duration || 1.5,
+      },
+    },
   };
-
 
   return (
       <motion.div
@@ -38,5 +35,5 @@ export const RevealOnScroll = ({children, duration, delay}: RevealOnScrollProps)
       >
         {children}
       </motion.div>
-  )
-}
+  );
+};

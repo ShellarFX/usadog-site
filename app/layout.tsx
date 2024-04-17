@@ -61,8 +61,24 @@ export default function RootLayout({
                 <div className="text-sm md:text-xl">© 2024 $USADOG • All Rights Reserved</div>
               </div>
 
-              <div className="text-xl md:text-2xl text-center">
-                Join us on this exciting journey as we honor the courage and dedication of military working dogs. Together, we can make a difference – one bark at a time!
+              <div className="flex flex-col gap-2">
+                <div className="text-xl md:text-2xl text-center">
+                  Join us on this exciting journey as we honor the courage and dedication of military working dogs. Together, we can make a
+                  difference – one bark at a time!
+                </div>
+                <Divider />
+                <div className="flex gap-4 w-full justify-center">
+                  {siteConfig.socials.map((social, index) => (
+                      <Link key={index}
+                            href={social.href}
+                            isExternal
+                            showAnchorIcon
+                            className="text-white text-lg"
+                      >
+                        {social.label}
+                      </Link>
+                  ))}
+                </div>
               </div>
 
             </div>
