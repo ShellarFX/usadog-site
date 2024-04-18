@@ -54,19 +54,19 @@ export const HowToGetStarted = () => {
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.2}>
-              <div className="flex w-full gap-4">
-                <Button as={Link}
-                        href="https://jup.ag/swap/SOL-GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP"
-                        isExternal
-                        fullWidth
-                        className="!h-12 text-lg bg-foreground2">Buy on jup.ag</Button>
+                <div className="flex w-full gap-4">
+                  <Button as={Link}
+                          href="https://jup.ag/swap/SOL-GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP"
+                          isExternal
+                          fullWidth
+                          className="!h-12 text-lg bg-foreground2">Buy on jup.ag</Button>
 
-                <Button as={Link}
-                        href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP&fixed=in"
-                        isExternal
-                        fullWidth
-                        className="!h-12 text-lg bg-foreground2">Buy on raydium.io</Button>
-              </div>
+                  <Button as={Link}
+                          href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP&fixed=in"
+                          isExternal
+                          fullWidth
+                          className="!h-12 text-lg bg-foreground2">Buy on raydium.io</Button>
+                </div>
               </RevealOnScroll>
             </div>
 
@@ -80,22 +80,24 @@ export const HowToGetStarted = () => {
                        className="h-[240px] md:h-[460px] w-auto hidden md:block" />
 
 
-                <div className="static md:absolute flex flex-col p-0 md:text-left text-center md:p-12 items-center justify-center h-full gap-2 text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-                  <div>
-                    1. Buy USADOG: Purchase USADOG tokens
-                    and become a proud member of our
-                    community.
-                  </div>
-                  <div>
-                    2. Spread the Word: Share the USADOG
-                    mission with friends, family, and
-                    fellow crypto enthusiasts.
-                  </div>
-                  <div>
-                    3. Stay Connected: Follow us on social
-                    media for the latest updates,
-                    giveaways, and community events.
-                  </div>
+                <div className="static md:absolute flex flex-col p-0 md:p-12 items-center justify-center h-full gap-2 text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+                  <ul className="list-decimal pl-6 space-y-2">
+                    <li>
+                      Buy USADOG: Purchase USADOG tokens
+                      and become a proud member of our
+                      community.
+                    </li>
+                    <li>
+                      Spread the Word: Share the USADOG
+                      mission with friends, family, and
+                      fellow crypto enthusiasts.
+                    </li>
+                    <li>
+                      Stay Connected: Follow us on social
+                      media for the latest updates,
+                      giveaways, and community events.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </RevealOnScroll>
