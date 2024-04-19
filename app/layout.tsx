@@ -10,6 +10,7 @@ import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
 import Image from 'next/image';
 import { Divider } from '@nextui-org/divider';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: {
@@ -85,7 +86,9 @@ export default function RootLayout({
           </footer>
         </div>
       </Providers>
+      
       <Analytics />
+      <SpeedInsights />
       </body>
       </html>
   );
