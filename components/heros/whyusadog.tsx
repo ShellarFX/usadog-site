@@ -29,7 +29,7 @@ export const WhyUsaDog = () => {
 
           <div className="flex md:flex-row flex-col gap-16 w-full justify-center">
             <RevealOnScroll>
-              <WhyFrame image="rocket"
+              <WhyFrame image="fun"
                         title="Fun"
                         description="Join our vibrant community and experience the thrill of crypto like never before" />
             </RevealOnScroll>
