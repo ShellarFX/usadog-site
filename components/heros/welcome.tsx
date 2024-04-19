@@ -10,11 +10,10 @@ export const Welcome = () => {
         <Image
             sizes="100vw"
             fill
-            objectFit="cover"
             src="/background.png"
             quality={100}
             alt="background"
-            className="pointer-events-none"
+            className="pointer-events-none object-cover"
         />
 
         <div className="flex md:flex-row flex-col w-full gap-12 md:gap-32 max-w-7xl md:px-0 items-center text-center px-6 z-10">

@@ -30,7 +30,7 @@ export const RevealOnScroll = ({ children, duration, delay }: RevealOnScrollProp
           className="card-container"
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true }}
           variants={cardVariants}
       >
         {children}

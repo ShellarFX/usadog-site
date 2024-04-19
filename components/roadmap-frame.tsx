@@ -15,9 +15,8 @@ export const RoadmapFrame = ({ title, items }: RoadmapFrameProps) => {
                height={0}
                sizes="100vw"
                src="/frame2.png"
-               objectFit="cover"
                alt="welcome"
-               className="w-[384px] h-auto" />
+               className="w-[384px] h-auto object-cover" />
 
         <div className="absolute flex flex-col py-12 px-10 text-center items-center gap-8 w-full h-full text-foreground2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
           <div className="flex flex-col gap-4">

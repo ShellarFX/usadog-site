@@ -29,11 +29,10 @@ export const HowToGetStarted = () => {
         <Image
             sizes="100vw"
             fill
-            objectFit="cover"
             src="/background2.png"
             quality={100}
             alt="background"
-            className="pointer-events-none"
+            className="pointer-events-none object-cover"
         />
 
         <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6 z-10">
