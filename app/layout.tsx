@@ -38,8 +38,7 @@ export default function RootLayout({
   return (
       <html lang="en" suppressHydrationWarning>
       <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://terminal.jup.ag/main-v2.js" />
+        <script src="https://terminal.jup.ag/main-v2.js" async />
         <title>$USADOG - Pack of Crypto Heroes</title>
       </head>
       <body

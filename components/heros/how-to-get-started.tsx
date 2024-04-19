@@ -11,19 +11,29 @@ import background from '../../public/background2.png';
 
 export const HowToGetStarted = () => {
   useEffect(() => {
-    // @ts-ignore
-    window.Jupiter.init({
-      displayMode: 'integrated',
-      integratedTargetId: 'integrated-terminal',
-      endpoint: 'https://rpc.ankr.com/solana/c2d5202e0d067e133ae3917d10dd099240a6baa806a638dbf764c71188a0a2fb',
-      strictTokenList: false,
-      defaultExplorer: 'Solscan',
-      formProps: {
-        fixedOutputMint: true,
-        initialInputMint: 'So11111111111111111111111111111111111111112',
-        initialOutputMint: 'GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP',
-      },
-    });
+    function initializeJupiter() {
+      // @ts-ignore
+      if (window.Jupiter) {
+        // @ts-ignore
+        window.Jupiter.init({
+          displayMode: 'integrated',
+          integratedTargetId: 'integrated-terminal',
+          endpoint: 'https://rpc.ankr.com/solana/c2d5202e0d067e133ae3917d10dd099240a6baa806a638dbf764c71188a0a2fb',
+          strictTokenList: false,
+          defaultExplorer: 'Solscan',
+          formProps: {
+            fixedOutputMint: true,
+            initialInputMint: 'So11111111111111111111111111111111111111112',
+            initialOutputMint: 'GjNwKDdL4ED5JTrnXN9LZWPiKiXpQCPgvvppE6cJYJzP',
+          },
+        });
+      } else {
+        // Retry after 100 milliseconds if the library is not loaded yet
+        setTimeout(initializeJupiter, 100);
+      }
+    }
+
+    initializeJupiter();  // Call the initialization function
   }, []);
 
   return (
