@@ -4,15 +4,14 @@ import Image from 'next/image';
 import { WhyFrame } from '@/components/why-frame';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
+import background from '../../public/background2.png';
 
 export const WhyUsaDog = () => {
   return (
       <div id="why" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
-            sizes="100vw"
             fill
-            src="/background2.png"
-            quality={100}
+            src={background}
             alt="background"
             className="pointer-events-none object-cover"
         />

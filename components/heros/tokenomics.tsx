@@ -3,15 +3,15 @@
 import Image from 'next/image';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
+import background from '../../public/background2.png';
+import graph from '../../public/graph.png';
 
 export const Tokenomics = () => {
   return (
       <div id="tokenomics" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
-            sizes="100vw"
             fill
-            src="/background2.png"
-            quality={100}
+            src={background}
             alt="background"
             className="pointer-events-none object-cover"
         />
@@ -47,12 +47,11 @@ export const Tokenomics = () => {
             <div className="flex flex-col items-center gap-4">
               <RevealOnScroll delay={0.2}>
                 <div className="flex-shrink-0">
-                  <Image width={0}
-                         height={0}
-                         sizes="100vw"
-                         src="/graph.png"
-                         alt="graph"
-                         className="w-[360px] md:w-[660px] h-auto" />
+                  <Image
+                      src={graph}
+                      alt="graph"
+                      className="w-[360px] md:w-[660px] h-auto"
+                  />
                 </div>
               </RevealOnScroll>
             </div>

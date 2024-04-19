@@ -6,15 +6,14 @@ import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { ScalingDiv } from '@/components/scaling-div';
 import { RotatingDiv } from '@/components/rotating-div';
 import { Link } from '@nextui-org/link';
+import background from '../../public/background2.png'
 
 export const Join = () => {
   return (
       <div id="join" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
-            sizes="100vw"
             fill
-            src="/background2.png"
-            quality={100}
+            src={background}
             alt="background"
             className="pointer-events-none object-cover"
         />

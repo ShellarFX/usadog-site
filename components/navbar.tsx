@@ -21,13 +21,18 @@ import Image from 'next/image';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { ChevronDownIcon } from '@nextui-org/shared-icons';
 import { Divider } from '@nextui-org/divider';
+import logo from '../public/logo.png';
 
 export const Navbar = () => {
   return (
       <NextUINavbar maxWidth="xl" position="sticky" isBlurred={false}>
         <NavbarBrand>
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src="/logo.png" alt="logo" width={0} height={0} sizes="100vw" className="h-12 w-auto" />
+            <Image
+                src={logo}
+                alt="logo"
+                className="h-12 w-auto"
+            />
           </NextLink>
         </NavbarBrand>
 
@@ -50,8 +55,8 @@ export const Navbar = () => {
                 </NavbarItem>
             ))}
 
-              <Dropdown>
-            <NavbarItem>
+            <Dropdown>
+              <NavbarItem>
                 <DropdownTrigger>
                   <Button disableRipple
                           className="p-0 bg-transparent data-[hover=true]:bg-transparent !text-xl pt-1 text-foreground"
@@ -59,21 +64,21 @@ export const Navbar = () => {
                           radius="sm"
                           variant="light">Socials</Button>
                 </DropdownTrigger>
-            </NavbarItem>
-                <DropdownMenu className="w-[340px]"
-                              itemClasses={{
-                                base: "gap-4",
-                                title: "text-foreground text-lg"
-                              }}
-                >
-                  {siteConfig.socials.map((social, index) => (
-                      // @ts-ignore
-                      <DropdownItem key={index} as={Link} isExternal href={social.href}>
-                          {social.label}
-                      </DropdownItem>
-                  ))}
-                </DropdownMenu>
-              </Dropdown>
+              </NavbarItem>
+              <DropdownMenu className="w-[340px]"
+                            itemClasses={{
+                              base: 'gap-4',
+                              title: 'text-foreground text-lg',
+                            }}
+              >
+                {siteConfig.socials.map((social, index) => (
+                    // @ts-ignore
+                    <DropdownItem key={index} as={Link} isExternal href={social.href}>
+                      {social.label}
+                    </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
           </ul>
         </NavbarContent>
 

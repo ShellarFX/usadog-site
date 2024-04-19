@@ -10,7 +10,8 @@ import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
 import Image from 'next/image';
 import { Divider } from '@nextui-org/divider';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import logo from '../public/logo.png';
 
 export const metadata: Metadata = {
   title: {
@@ -57,8 +58,14 @@ export default function RootLayout({
           <footer className="w-full flex justify-center py-8 min-h-64 px-8 border-t border-default-400">
             <div className="max-w-7xl w-full flex flex-col lg:flex-row justify-between items-center gap-12 md:gap-24">
               <div className="flex flex-col items-center gap-4 flex-shrink-0">
-                <Image width={0} height={0} sizes="100vw" src="/logo.png" alt="logo" className="w-[180px] md:w-[320px] h-auto" />
+                <Image
+                    src={logo}
+                    alt="logo"
+                    className="w-[180px] md:w-[320px] h-auto"
+                />
+
                 <Divider />
+
                 <div className="text-sm md:text-xl">© 2024 $USADOG • All Rights Reserved</div>
               </div>
 
@@ -86,7 +93,7 @@ export default function RootLayout({
           </footer>
         </div>
       </Providers>
-      
+
       <Analytics />
       <SpeedInsights />
       </body>

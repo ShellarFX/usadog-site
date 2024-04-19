@@ -6,6 +6,8 @@ import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
+import frame from '../../public/frame90.png';
+import background from '../../public/background2.png';
 
 export const HowToGetStarted = () => {
   useEffect(() => {
@@ -27,10 +29,8 @@ export const HowToGetStarted = () => {
   return (
       <div id="get-started" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
-            sizes="100vw"
             fill
-            src="/background2.png"
-            quality={100}
+            src={background}
             alt="background"
             className="pointer-events-none object-cover"
         />
@@ -71,12 +71,11 @@ export const HowToGetStarted = () => {
 
             <RevealOnScroll delay={0.2}>
               <div className="relative flex h-full">
-                <Image width={0}
-                       height={0}
-                       sizes="100vw"
-                       src="/frame90.png"
-                       alt="welcome"
-                       className="h-[240px] md:h-[460px] w-auto hidden md:block" />
+                <Image
+                    src={frame}
+                    alt="welcome"
+                    className="h-[240px] md:h-[460px] w-auto hidden md:block"
+                />
 
 
                 <div className="static md:absolute flex flex-col p-0 md:p-12 items-center justify-center h-full gap-2 text-3xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">

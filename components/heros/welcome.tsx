@@ -3,15 +3,16 @@
 import Image from 'next/image';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { FloatingDiv } from '@/components/floating-div';
+import background from '../../public/background.png';
+import welcome from '../../public/welcome.png';
+import dogs from '../../public/dogs.png';
 
 export const Welcome = () => {
   return (
       <div id="home" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
-            sizes="100vw"
             fill
-            src="/background.png"
-            quality={100}
+            src={background}
             alt="background"
             className="pointer-events-none object-cover"
         />
@@ -20,22 +21,20 @@ export const Welcome = () => {
           <div className="flex flex-col items-center z-10 shrink-0">
             <RevealOnScroll>
               <FloatingDiv>
-                <Image width={0}
-                       height={0}
-                       sizes="100vw"
-                       src="/welcome.png"
-                       alt="welcome"
-                       className="w-[360px] md:w-[460px] h-auto" />
+                <Image
+                    src={welcome}
+                    alt="welcome"
+                    className="w-[360px] md:w-[460px] h-auto"
+                />
               </FloatingDiv>
             </RevealOnScroll>
 
             <RevealOnScroll>
-              <Image width={0}
-                     height={0}
-                     sizes="100vw"
-                     src="/dogs.png"
-                     alt="welcome"
-                     className="w-[360px] md:w-[460px] h-auto drop-shadow-md pl-14" />
+              <Image
+                  src={dogs}
+                  alt="dogs"
+                  className="w-[360px] md:w-[460px] h-auto drop-shadow-md pl-14"
+              />
             </RevealOnScroll>
           </div>
 
