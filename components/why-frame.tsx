@@ -26,7 +26,7 @@ export const WhyFrame = ({ image, title, description }: WhyFrameProps) => {
                  className="w-[140px] md:w-[200px] h-auto" />
 
           <div className="flex flex-col gap-4">
-            <div className="text-4xl">
+            <div className="text-4xl text-foreground">
               {title}
             </div>
 
