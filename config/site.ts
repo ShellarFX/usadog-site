@@ -48,7 +48,7 @@ export const siteConfig = {
 		},
 		{
 			label: "Telegram",
-			href: "https://t.me/@usadogofficial"
+			href: "https://t.me/usadogofficial"
 		}
 	]
 };
