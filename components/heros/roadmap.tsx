@@ -5,8 +5,11 @@ import { RoadmapFrame } from '@/components/roadmap-frame';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
 import background from '../../public/background2.png';
+import { useCursor } from '@/contexts/cursor-context';
 
 export const Roadmap = () => {
+  const { setCursorText, setCursorVariant } = useCursor();
+
   return (
       <div id="roadmap" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
@@ -19,7 +22,17 @@ export const Roadmap = () => {
         <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6 z-10">
           <RevealOnScroll>
             <RotatingDiv>
-              <div className="text-5xl md:text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+              <div
+                  className="text-5xl md:text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+                  onMouseEnter={() => {
+                    setCursorVariant('welcome');
+                    setCursorText('🚗');
+                  }}
+                  onMouseLeave={() => {
+                    setCursorVariant("default")
+                    setCursorText("")
+                  }}
+              >
                 Roadmap
               </div>
             </RotatingDiv>

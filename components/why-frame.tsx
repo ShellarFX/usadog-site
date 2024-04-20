@@ -4,11 +4,14 @@ import fun from '../public/fun.png';
 import loyalty from '../public/loyalty.png';
 import potential from '../public/potential.png';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { ScaleOnHover } from '@/components/scale-on-hover';
+import { useCursor } from '@/contexts/cursor-context';
 
 interface WhyFrameProps {
   image: string;
   title: string;
   description: string;
+  cursorText: string;
 }
 
 const Images: { [k: string]: { image: StaticImport, blur: string } } = {
@@ -27,7 +30,8 @@ const Images: { [k: string]: { image: StaticImport, blur: string } } = {
   },
 };
 
-export const WhyFrame = ({ image, title, description }: WhyFrameProps) => {
+export const WhyFrame = ({ image, title, description, cursorText }: WhyFrameProps) => {
+  const { setCursorText, setCursorVariant } = useCursor();
 
   return (
       <div className="relative w-full flex h-full">
@@ -37,13 +41,23 @@ export const WhyFrame = ({ image, title, description }: WhyFrameProps) => {
         />
 
         <div className="absolute flex flex-col py-12 px-10 text-center items-center gap-8 w-full h-full text-foreground2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
-          <Image
-              src={Images[image].image}
-              alt={image}
-              placeholder="blur"
-              blurDataURL={Images[image].blur}
-              className="w-[140px] md:w-[200px] h-auto"
-          />
+          <ScaleOnHover>
+            <Image
+                src={Images[image].image}
+                alt={image}
+                placeholder="blur"
+                blurDataURL={Images[image].blur}
+                className="w-[140px] md:w-[200px] h-auto"
+                onMouseEnter={() => {
+                  setCursorVariant("welcome")
+                  setCursorText(cursorText)
+                }}
+                onMouseLeave={() => {
+                  setCursorVariant("default")
+                  setCursorText("")
+                }}
+            />
+          </ScaleOnHover>
 
           <div className="flex flex-col gap-4">
             <div className="text-4xl text-foreground">

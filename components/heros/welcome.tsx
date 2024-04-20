@@ -6,8 +6,11 @@ import { FloatingDiv } from '@/components/floating-div';
 import background from '../../public/background.png';
 import welcome from '../../public/welcome.png';
 import dogs from '../../public/dogs.png';
+import { useCursor } from '@/contexts/cursor-context';
 
 export const Welcome = () => {
+  const { setCursorText, setCursorVariant } = useCursor();
+
   return (
       <div id="home" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
@@ -27,6 +30,14 @@ export const Welcome = () => {
                     src={welcome}
                     alt="welcome"
                     className="w-[360px] md:w-[460px] h-auto"
+                    onMouseEnter={() => {
+                      setCursorVariant('welcome');
+                      setCursorText('👋');
+                    }}
+                    onMouseLeave={() => {
+                      setCursorVariant('default');
+                      setCursorText('');
+                    }}
                 />
               </FloatingDiv>
             </RevealOnScroll>
@@ -36,6 +47,14 @@ export const Welcome = () => {
                   src={dogs}
                   alt="dogs"
                   className="w-[360px] md:w-[460px] h-auto drop-shadow-md pl-14"
+                  onMouseEnter={() => {
+                    setCursorVariant('welcome');
+                    setCursorText('🐶');
+                  }}
+                  onMouseLeave={() => {
+                    setCursorVariant('default');
+                    setCursorText('');
+                  }}
               />
             </RevealOnScroll>
           </div>

@@ -1,3 +1,5 @@
+"use client"
+
 import '@/styles/globals.css';
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
@@ -12,29 +14,32 @@ import Image from 'next/image';
 import { Divider } from '@nextui-org/divider';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import logo from '../public/logo.png';
+import { Cursor } from '@/components/cursor';
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  // themeColor: [
-  // 	{ media: "(prefers-color-scheme: light)", color: "white" },
-  // 	{ media: "(prefers-color-scheme: dark)", color: "black" },
-  // ],
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: siteConfig.name,
+//     template: `%s - ${siteConfig.name}`,
+//   },
+//   description: siteConfig.description,
+//   // themeColor: [
+//   // 	{ media: "(prefers-color-scheme: light)", color: "white" },
+//   // 	{ media: "(prefers-color-scheme: dark)", color: "black" },
+//   // ],
+//   icons: {
+//     icon: '/favicon.ico',
+//     shortcut: '/favicon-16x16.png',
+//     apple: '/apple-touch-icon.png',
+//   },
+// };
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const ref = React.useRef(null);
+
   return (
       <html lang="en" suppressHydrationWarning>
       <head>
@@ -48,7 +53,9 @@ export default function RootLayout({
           )}
       >
       <Providers>
-        <div className="relative flex flex-col">
+        <Cursor layoutRef={ref} />
+
+        <div className="relative flex flex-col" ref={ref}>
           <Navbar />
           <main className="flex-grow w-full h-full">
             {children}

@@ -6,9 +6,12 @@ import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { ScalingDiv } from '@/components/scaling-div';
 import { RotatingDiv } from '@/components/rotating-div';
 import { Link } from '@nextui-org/link';
-import background from '../../public/background2.png'
+import background from '../../public/background2.png';
+import { useCursor } from '@/contexts/cursor-context';
 
 export const Join = () => {
+  const { setCursorText, setCursorVariant } = useCursor();
+
   return (
       <div id="join" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
@@ -21,7 +24,17 @@ export const Join = () => {
         <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6 z-10">
           <RevealOnScroll>
             <RotatingDiv>
-              <div className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+              <div
+                  className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+                  onMouseEnter={() => {
+                    setCursorVariant('welcome');
+                    setCursorText('🎉');
+                  }}
+                  onMouseLeave={() => {
+                    setCursorVariant('default');
+                    setCursorText('');
+                  }}
+              >
                 JOIN THE PACK TODAY!
               </div>
             </RotatingDiv>

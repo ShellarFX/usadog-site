@@ -8,8 +8,11 @@ import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import frame from '../../public/frame90.png';
 import background from '../../public/background2.png';
+import { useCursor } from '@/contexts/cursor-context';
 
 export const HowToGetStarted = () => {
+  const {setCursorText, setCursorVariant} = useCursor()
+
   useEffect(() => {
     function initializeJupiter() {
       // @ts-ignore
@@ -48,7 +51,17 @@ export const HowToGetStarted = () => {
         <div className="flex flex-col w-full gap-12 max-w-7xl md:px-0 items-start px-6 z-10">
           <RevealOnScroll>
             <RotatingDiv>
-              <div className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+              <div
+                  className="text-7xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+              onMouseEnter={() => {
+                setCursorVariant("welcome")
+                setCursorText("🤨")
+              }}
+                  onMouseLeave={() => {
+                    setCursorVariant("default")
+                    setCursorText("")
+                  }}
+              >
                 How to get started?
               </div>
             </RotatingDiv>

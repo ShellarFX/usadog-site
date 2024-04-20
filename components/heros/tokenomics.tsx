@@ -5,8 +5,11 @@ import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { RotatingDiv } from '@/components/rotating-div';
 import background from '../../public/background2.png';
 import graph from '../../public/graph.png';
+import { useCursor } from '@/contexts/cursor-context';
 
 export const Tokenomics = () => {
+  const { setCursorText, setCursorVariant } = useCursor();
+
   return (
       <div id="tokenomics" className="relative py-12 w-full items-center flex justify-center scroll-mt-12">
         <Image
@@ -21,7 +24,17 @@ export const Tokenomics = () => {
             <div className="inline-flex flex-col justify-between">
               <RevealOnScroll>
                 <RotatingDiv>
-                  <div className="text-5xl md:text-7xl">
+                  <div
+                      className="text-5xl md:text-7xl"
+                      onMouseEnter={() => {
+                        setCursorVariant('welcome');
+                        setCursorText('💰');
+                      }}
+                      onMouseLeave={() => {
+                        setCursorVariant('default');
+                        setCursorText('');
+                      }}
+                  >
                     Tokenomics
                   </div>
                 </RotatingDiv>
