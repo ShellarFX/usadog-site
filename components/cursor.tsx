@@ -1,8 +1,8 @@
-import { motion, useMotionValue, useSpring, useTransform, Variants } from 'framer-motion';
+import { motion, useMotionValue, useSpring, Variants } from 'framer-motion';
 import React from 'react';
-// import { useMouse } from 'react-use';
 import { useCursor } from '@/contexts/cursor-context';
 import useMouse from '@react-hook/mouse-position';
+import Emoji from '@/components/emoji';
 
 interface CursorProps {
   layoutRef: React.RefObject<HTMLDivElement>;
@@ -38,7 +38,7 @@ export const Cursor = ({ layoutRef }: CursorProps) => {
       height: 64,
       width: 64,
       fontSize: '32px',
-      cursor: "none"
+      cursor: 'none',
     },
   };
 
@@ -60,13 +60,11 @@ export const Cursor = ({ layoutRef }: CursorProps) => {
           animate={cursorVariant}
           transition={springConfig}
           style={{
-            // translateX: useTransform(cursorXSpring, value => value - offsets[cursorVariant]),
-            // translateY: useTransform(cursorYSpring, value => value - offsets[cursorVariant]),
             translateX: cursorXSpring,
             translateY: cursorYSpring,
           }}
       >
-        <span className="flex items-center justify-center mt-2 pointer-events-none">{cursorText}</span>
+        <span className="flex items-center justify-center pointer-events-none drop-shadow-lg"><Emoji emoji={cursorText} /></span>
       </motion.div>
   );
 };
