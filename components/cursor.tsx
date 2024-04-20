@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, Variants } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 import { useCursor } from '@/contexts/cursor-context';
 import useMouse from '@react-hook/mouse-position';
 import Emoji from '@/components/emoji';
@@ -16,6 +16,9 @@ export const Cursor = ({ layoutRef }: CursorProps) => {
   const springConfig = { damping: 28, stiffness: 500 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
+
+  const [lastX, setLastX] = useState(0)
+  const [lastY, setLastY] = useState(0)
 
   const { cursorText, cursorVariant } = useCursor();
 
@@ -49,8 +52,11 @@ export const Cursor = ({ layoutRef }: CursorProps) => {
   };
 
   React.useEffect(() => {
-    cursorX.set((cursorXPosition || 0) - offsets[cursorVariant]);
-    cursorY.set((cursorYPosition || 0) - offsets[cursorVariant]);
+    if (!!cursorXPosition) setLastX(cursorXPosition)
+    if (!!cursorYPosition) setLastY(cursorYPosition)
+
+    cursorX.set(lastX - offsets[cursorVariant]);
+    cursorY.set(lastY - offsets[cursorVariant]);
   }, [cursorX, cursorY, cursorXPosition, cursorYPosition, offsets, cursorVariant]);
 
   return (
